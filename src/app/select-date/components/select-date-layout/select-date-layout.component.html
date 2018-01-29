@@ -1,3 +1,23 @@
-<p>
-  select-date-layout works!
-</p>
+<mat-card class="card">
+  <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit(form.value)">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Selecciona una fecha" formControlName="startDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('startDate')?.invalid">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Introduce la cantidad de días" type="number" formControlName="numberOfDays">
+        <mat-error *ngIf="form.get('numberOfDays')?.invalid">Campo requerido</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Introduce el código del país" type="text" formControlName="countryCode">
+        <mat-error *ngIf="form.get('countryCode')?.invalid">Campo requerido</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Aceptar</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

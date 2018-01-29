@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { CalendarMonthComponent } from './components/calendar-month/calendar-month.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [SharedModule],
   declarations: [CalendarMonthComponent],
+  exports: [CalendarMonthComponent],
 })
 export class CalendarModule {}

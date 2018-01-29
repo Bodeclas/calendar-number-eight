@@ -1,0 +1,63 @@
+$dayBase: 30px;
+$base: 10px;
+
+.calendar {
+  display: block;
+  width: $dayBase * 7;
+  margin: 0 auto;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .month-grid {
+    .day-names {
+      display: flex;
+      flex-direction: row;
+      background: teal;
+    }
+    .weeks {
+      display: flex;
+      flex-direction: column;
+    }
+    .week {
+      display: flex;
+      flex-direction: row;
+    }
+    .week-date,
+    .day-name {
+      text-align: center;
+      padding: $base;
+      display: block;
+      width: $dayBase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .week-date {
+      border: 1px solid white;
+      height: $dayBase;
+      position: relative;
+      background-color: lightgreen;
+
+      .date-text {
+        z-index: 10;
+        font-size: 10px;
+      }
+
+      &.weekend {
+        background-color: yellow;
+      }
+
+      &.disabled {
+        color: gray;
+        background-color: gray;
+      }
+    }
+
+    .today {
+      font-weight: bold;
+    }
+  }
+}

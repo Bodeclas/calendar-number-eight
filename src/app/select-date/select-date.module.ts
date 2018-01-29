@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SelectDateFormComponent } from './containers/select-date-form/select-date-form.component';
 import { SelectDateLayoutComponent } from './components/select-date-layout/select-date-layout.component';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
-  imports: [CommonModule],
-  declarations: [SelectDateFormComponent, SelectDateLayoutComponent],
+  imports: [SharedModule],
+  declarations: [SelectDateLayoutComponent],
+  exports: [SelectDateLayoutComponent],
 })
 export class SelectDateModule {}

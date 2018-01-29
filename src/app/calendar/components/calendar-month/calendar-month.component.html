@@ -1,3 +1,36 @@
-<p>
-  calendar works!
-</p>
+<div class="calendar">
+  <div class="month-grid">
+    <div class="day-names">
+      <div *ngFor="let dayName of dayNames" class="day-name p9">
+        {{ dayName }}
+      </div>
+    </div>
+    <div class="weeks">
+      <div *ngFor="let week of weeks" class="week">
+
+        <ng-container *ngFor="let day of week">
+
+
+          <div class="week-date disabled" *ngIf="!isSelectedMonth(day.mDate)">
+            <span class="date-text">{{ day.mDate.date() }}</span>
+          </div>
+
+
+
+          <div class="week-date enabled" *ngIf="isSelectedMonth(day.mDate)" [ngClass]="{
+            today: day.today,
+            weekend: !day.weekday
+          }">
+
+
+            <span class="date-text">{{ day.mDate.date() }}</span>
+
+
+          </div>
+        </ng-container>
+
+
+      </div>
+    </div>
+  </div>
+</div>

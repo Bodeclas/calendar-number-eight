@@ -1,0 +1,26 @@
+app-select-date-layout {
+  .card {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 15px 40px;
+  }
+
+  .mat-card-content {
+    margin-bottom: 0;
+  }
+
+  .container > * {
+    width: 100%;
+  }
+  mat-card-actions {
+    text-align: center;
+  }
+  .mat-card > .mat-card-actions:last-child,
+  .mat-card-actions {
+    margin-bottom: 0 !important;
+  }
+  .mat-card-actions {
+    padding: 0 !important;
+  }
+}
